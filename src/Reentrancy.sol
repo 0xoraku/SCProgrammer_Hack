@@ -66,6 +66,18 @@ contract ReEntrancyGuard {
         balances[msg.sender] += msg.value;
     }
 
+    //pattern1
+    // function withdraw() public {
+    //     uint balance = balances[msg.sender];
+    //     require(balance > 0);
+    //     //ここでbalanceを０にしているので、攻撃ができない
+    //     balances[msg.sender] = 0;
+
+    //     (bool sent, ) = msg.sender.call{value: balance}("");
+    //     require(sent, "Failed to send Ether");
+    // }
+
+    //pattern2
     // Withdraw with a reentrancy guard modifier
     function withdraw() public noReentrant{
         uint balance = balances[msg.sender];
