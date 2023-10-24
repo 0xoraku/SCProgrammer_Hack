@@ -12,7 +12,7 @@ contract VaultTest is Test {
         vault = new Vault(bytes32("123"));
     }
 
-    function test_get_slot_value() public {
+    function test_get_slot_value() public view {
         for(uint i = 0; i< 8; i++) {
             bytes32 slotValue = vault.getSlotValue(i);
             console2.log("slot %s: ", i);
@@ -20,7 +20,7 @@ contract VaultTest is Test {
         }
     }
 
-    function test_reveal_password() public {
+    function test_reveal_password() public view {
         bytes32 password = vault.getSlotValue(2);
         console2.logBytes32(password); //0x3132330000000000000000000000000000000000000000000000000000000000
         bytes memory myBytes = abi.encodePacked(password);

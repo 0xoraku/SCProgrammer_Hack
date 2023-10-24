@@ -17,3 +17,5 @@ solidityのversionが0.8.0以上の場合、オーバーフローとアンダー
 
 ### Accessing Private Data
 private修飾子などは関係なくスマートコントラクト上のすべてのデータは読み取ることができる。
+
+### Unsafe Delegatecall(1)
