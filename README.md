@@ -14,3 +14,6 @@ solidityのversionが0.8.0以上の場合、オーバーフローとアンダー
 ### Self Destruct
 
 コントラクトは、selfdestruct を呼び出すことでブロックチェーンから削除できます。 selfdestruct は、コントラクトに保存されている残りの Ether をすべて指定されたアドレスに送信します。 脆弱性 悪意のあるコントラクトは、selfdestructを使用して任意のコントラクトに Ether を強制的に送信する可能性があります。但し、selfdestruct自体は非推奨で、将来的には廃止される可能性がある。
+
+### Accessing Private Data
+private修飾子などは関係なくスマートコントラクト上のすべてのデータは読み取ることができる。
