@@ -18,10 +18,12 @@ solidityのversionが0.8.0以上の場合、オーバーフローとアンダー
 ### Accessing Private Data
 private修飾子などは関係なくスマートコントラクト上のすべてのデータは読み取ることができる。
 
-### Unsafe Delegatecall(1)
+### Unsafe Delegatecall
 delegatecallは、他のコントラクトのコードを、現在のコントラクトのコンテキスト内で実行するために使用されます。つまり、コントラクトAがdelegatecallを使用してコントラクトBの関数を呼び出すと、その関数はコントラクトAのストレージ、バランス、および他のコンテキストで実行されます。
 
 delegatecall を使用するときは 2 つのことに留意する必要があります 
 1. delegatecall はコンテキスト (ストレージ、呼び出し元など) を保持します。
 2. ストレージ レイアウトは、delegatecall を呼び出すコントラクトと呼び出されるコントラクトで同じである必要があります。
 
+### Insecure Source of Randomness
+blockhash と block.timestamp でランダム値を生成するのは危険。
