@@ -27,3 +27,7 @@ delegatecall を使用するときは 2 つのことに留意する必要があ�
 
 ### Insecure Source of Randomness
 blockhash と block.timestamp でランダム値を生成するのは危険。
+
+### Denial of Service
+ContractからのEtherの送金を拒否することによるサービス妨害。
+例えば、contractにfallback関数を実装しないまま、送金するように実装する。
