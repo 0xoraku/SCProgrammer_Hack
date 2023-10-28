@@ -31,3 +31,9 @@ blockhash と block.timestamp でランダム値を生成するのは危険。
 ### Denial of Service
 ContractからのEtherの送金を拒否することによるサービス妨害。
 例えば、contractにfallback関数を実装しないまま、送金するように実装する。
+
+### Phishing with tx.origin
+msg.sender と tx.origin の違いについて。
+コントラクト A が B を呼び出し、B が C を呼び出す場合、C では msg.sender が B、tx.origin が A になる。
+悪意のあるコントラクトは、コントラクトの所有者をだまして、その所有者のみが呼び出すことができる関数を呼び出す可能性がある。
+
