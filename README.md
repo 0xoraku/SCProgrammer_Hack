@@ -59,3 +59,6 @@ block.timestamp は、マイナーによって次の制約に従って操作さ�
 2. meta transactionと呼ばれるgas-less transactionの実現
 同じシグネチャを複数回使用して関数を実行できる。これは、署名者の意図がトランザクションを一度承認することだった場合に有害となる可能性がある。
 
+### Bypass Contract Size Check
+contractのsizeが0(extcodesize == 0)のコントラクトを作成する。
+openzeppelinのlibraryにisContract関数があるので、これをそのまま使うのは危険。
